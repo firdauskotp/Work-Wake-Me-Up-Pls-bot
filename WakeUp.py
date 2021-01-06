@@ -109,8 +109,6 @@ WakeMeUpPlsbot = telepot.Bot('1492485154:AAEDV8U7w4TEo8_hFQFLOizJwmRUuHoGfLc')
 print (WakeMeUpPlsbot.getMe())
 
 #Calling function
-#MessageLoop(PnCTrackbot,action).run_as_thread()
-
 WakeMeUpPlsbot.message_loop({'chat':action})
 
 #pause
@@ -130,19 +128,13 @@ while 1:
             pass
         elif usertime==validtime:
             while True:
-                WakeMeUpPlsbot.sendMessage(usid, crepic)
-                WakeMeUpPlsbot.sendMessage(usid, ans)
-                #WakeMeUpPlsbot.sendMessage(usid,str("WAKE UP! WANT TO STOP? USE /clear. YOU SHOULD BE AWAKE NOW"))
                 WakeMeUpPlsbot.sendMessage(usid,str("WAKE UP! WANT TO STOP? ANSWER THE QUESTION \n " + str(num1) + " + " + str(num2) + "\n YOU SHOULD BE AWAKE NOW I HOPE"))
                 
                 if crepic==1:
                     WakeMeUpPlsbot.sendPhoto(usid, photo="https://i.pinimg.com/originals/67/0f/44/670f448418af63954c5dc20bc7932754.jpg")
                 else:
                     pass
-                print(num1)
-                print(num2)
-                print(num1+num2)
-                print(ans)
+                
                 if int(num1)+int(num2) == int(x):
                     print("loop break")
                     usertime=0
