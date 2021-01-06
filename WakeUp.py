@@ -110,7 +110,7 @@ print (WakeMeUpPlsbot.getMe())
 
 #Calling function
 WakeMeUpPlsbot.message_loop({'chat':action})
-
+WakeMeUpPlsbot.setWebhook()
 #pause
 while 1:
 
