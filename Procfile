@@ -1,1 +1,0 @@
-worker: python wake_up.py 1492485154:AAEDV8U7w4TEo8_hFQFLOizJwmRUuHoGfLc
