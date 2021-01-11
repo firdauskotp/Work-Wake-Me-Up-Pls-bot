@@ -6,7 +6,13 @@ import string
 from telepot.loop import MessageLoop
 import re
 import random
+# import pymongo
+# from pymongo import MongoClient
 
+# cluster = MongoClient("mongodb+srv://firdauskotp:<password>@cluster0.oylmd.mongodb.net/<dbname>?retryWrites=true&w=majority")
+# db=cluster["wakeup"]
+# col1=db["users"]
+# col2=db["time"]
 usertime=0
 usid=0
 now=datetime.now()
@@ -35,15 +41,15 @@ def action(msg):
     usid = chat_id
 
     if command == "/help":
-        WakeMeUpPlsbot.sendMessage(chat_id,str("Use /alarm followed by the time in 24 hour format and : in the middle to set the alarm time to be spammed! Example: /alarm 01:30 \n Use /clear to clear the time you input \n Use /curtime to know the current time \n Use /curalarm to show the alarm you saved \n Want to go further? use /creepypicon to include an image. If you change your mind, use /creepypicoff. By default it is off \n Want to stop the alarm? Answer the math question given by using /curans followed by the answer"))
+        WakeMeUpPlsbot.sendMessage(chat_id,str("REMINDER THAT THIS BOT USES ASIA/SINGAPORE TIMEZONE \n Use /alarm followed by the time in 24 hour format and : in the middle to set the alarm time to be spammed! Example: /alarm 01:30 \n Use /clear to clear the time you input \n Use /curtime to know the current time in Asia/Singapore timezone \n Use /curalarm to show the alarm you saved \n Want to go further? use /creepypicon to include an image. If you change your mind, use /creepypicoff. By default it is off \n Want to stop the alarm? Answer the math question given by using /curans followed by the answer"))
     elif command == "/start":
-        WakeMeUpPlsbot.sendMessage(chat_id,str("Welcome! Use /help to know what commands to use"))
+        WakeMeUpPlsbot.sendMessage(chat_id,str("Welcome! REMINDER THAT THIS BOT USES ASIA/SINGAPORE TIMEZONE \n Use /help to know what commands to use"))
         WakeMeUpPlsbot.sendPhoto(chat_id,photo="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi.redd.it%2Fpb59vnz6zgk51.jpg&f=1&nofb=1")
     elif command == "/curtime":
         WakeMeUpPlsbot.sendMessage(chat_id,strftime("%H:%M"))
     elif command == "/curalarm":
         if usertime ==0:
-            WakeMeUpPlsbot.sendMessage(chat_id,strftime("%H:%M"))
+            WakeMeUpPlsbot.sendMessage(chat_id,str("You did not set an alarm!"))
         else:
             WakeMeUpPlsbot.sendMessage(chat_id,usertime)
     elif command.find("/curans") != -1:
