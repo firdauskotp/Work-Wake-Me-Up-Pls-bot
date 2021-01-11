@@ -35,11 +35,17 @@ def action(msg):
     usid = chat_id
 
     if command == "/help":
-        WakeMeUpPlsbot.sendMessage(chat_id,str("Use /alarm followed by the time in 24 hour format and : in the middle to set the alarm time to be spammed! Example: /alarm 01:30 \n Use /clear to clear the time you input \n Use /curtime to know the current time \n Want to go further? use /creepypicon to include an image. If you change your mind, use /creepypicoff. By default it is off \n Want to stop the alarm? Answer the math question given by using /curans followed by the answer"))
+        WakeMeUpPlsbot.sendMessage(chat_id,str("Use /alarm followed by the time in 24 hour format and : in the middle to set the alarm time to be spammed! Example: /alarm 01:30 \n Use /clear to clear the time you input \n Use /curtime to know the current time \n Use /curalarm to show the alarm you saved \n Want to go further? use /creepypicon to include an image. If you change your mind, use /creepypicoff. By default it is off \n Want to stop the alarm? Answer the math question given by using /curans followed by the answer"))
     elif command == "/start":
         WakeMeUpPlsbot.sendMessage(chat_id,str("Welcome! Use /help to know what commands to use"))
+        WakeMeUpPlsbot.sendPhoto(chat_id,photo="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi.redd.it%2Fpb59vnz6zgk51.jpg&f=1&nofb=1")
     elif command == "/curtime":
-        WakeMeUpPlsbot.sendMessage(chat_id,now.strftime("%H:%M"))
+        WakeMeUpPlsbot.sendMessage(chat_id,strftime("%H:%M"))
+    elif command == "/curalarm":
+        if usertime ==0:
+            WakeMeUpPlsbot.sendMessage(chat_id,strftime("%H:%M"))
+        else:
+            WakeMeUpPlsbot.sendMessage(chat_id,usertime)
     elif command.find("/curans") != -1:
         l=6
         if len(command[0+l+1:])==0:
@@ -77,7 +83,7 @@ def action(msg):
                     elif len(zone)==4 and zone[1]==":":
                         usertime = "0"+str(zone[0])+":"+str(zone[2])+str(zone[3])
                         WakeMeUpPlsbot.sendMessage(chat_id,str("Alarm saved!"))
-                        WakeMeUpPlsbot.sendMessage(chat_id,str(usertime))
+                        #WakeMeUpPlsbot.sendMessage(chat_id,str(usertime))
                         num1 = random.randint(0,100)
                         num2 = random.randint(0,100)
                         
@@ -85,7 +91,7 @@ def action(msg):
                     elif len(zone)==4 and zone[2]!=":":
                         usertime = str(zone[0]) + str(zone[1]) + ":" + str(zone[2]) + str(zone[3])
                         WakeMeUpPlsbot.sendMessage(chat_id,str("Alarm saved!"))
-                        WakeMeUpPlsbot.sendMessage(chat_id,str(usertime))
+                        #WakeMeUpPlsbot.sendMessage(chat_id,str(usertime))
                         num1 = random.randint(0,100)
                         num2 = random.randint(0,100)
                     elif len(zone)<=3:
@@ -93,7 +99,7 @@ def action(msg):
                     else:
                         WakeMeUpPlsbot.sendMessage(chat_id,str("Alarm saved!"))
                         usertime = str(zone)
-                        WakeMeUpPlsbot.sendMessage(chat_id,str(usertime))
+                        #WakeMeUpPlsbot.sendMessage(chat_id,str(usertime))
                         num1 = random.randint(0,100)
                         num2 = random.randint(0,100)
                         
