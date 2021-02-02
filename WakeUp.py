@@ -9,7 +9,7 @@ import random
 # import pymongo
 # from pymongo import MongoClient
 
-# cluster = MongoClient("mongodb+srv://firdauskotp:<password>@cluster0.oylmd.mongodb.net/<dbname>?retryWrites=true&w=majority")
+# cluster = MongoClient("mongodb+srv://<username>:<password>@cluster0.oylmd.mongodb.net/<dbname>?retryWrites=true&w=majority")
 # db=cluster["wakeup"]
 # col1=db["users"]
 # col2=db["time"]
@@ -117,7 +117,7 @@ def action(msg):
     else:
         WakeMeUpPlsbot.sendMessage(chat_id,str(now.strftime("Wrong command, use /help to see available commands")))
 #token
-WakeMeUpPlsbot = telepot.Bot('1492485154:AAEDV8U7w4TEo8_hFQFLOizJwmRUuHoGfLc')
+WakeMeUpPlsbot = telepot.Bot('put your bot token here')
 print (WakeMeUpPlsbot.getMe())
 
 #Calling function
